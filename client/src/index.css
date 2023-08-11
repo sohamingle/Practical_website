@@ -1,0 +1,151 @@
+body{
+  margin: 0;
+  background: url(./assets/keyboard.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: 'Noto Sans Vithkuqi';
+}
+
+.subject--title{
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+.subject--grid{
+  position: relative;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(30px);
+  width: 500px;
+  height: 500px;
+  justify-content:center;
+  align-items: top;
+  padding: 15px;
+  
+}
+
+.subject--container{
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px;
+  gap: 50px;
+  margin-right:50px ;
+  align-items:start;
+}
+
+
+.logo--dvlsi,.logo--dtsp{
+  width: 130px;
+  cursor: pointer;
+  margin-top: 40px;
+}
+.logo--dcom{
+  width: 160px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+
+.back{
+  position: absolute;
+  left: 20px;
+  border:  1px solid white;
+  border-radius: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.experiment--holder{
+  display: grid;
+  grid-template-columns: 190px 190px;
+  grid-template-rows: 100px;
+  margin-top: 90px;
+  gap: 15px;
+}
+
+.experiments{
+  display: flex;
+  border: 1px solid white;
+  height: 40px;
+  border-radius: 25px;
+  padding: 5px 20px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.form--text,.form--text--name{
+  border: 1px solid white;
+  background-color: transparent;
+  margin: 5px;
+  color: white;
+  padding: 5px 15px;
+}
+.form--text::placeholder,.form--text--name::placeholder{
+  color: aliceblue;
+}
+
+.form--text--name{
+  margin-top: 69px;
+  border-radius: 10px;
+  padding: 9px 15px;
+}
+.form--text{
+  width: 35px;
+  border-radius: 10px;
+  padding: 9px 10px;
+ 
+}
+.form--text::-webkit-inner-spin-button{
+  display: none;
+}
+.form--radio{
+  width: 50px;
+  padding: 20px;
+}
+.form--button{
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius:10px ;
+  margin-left: 80px;
+  cursor: pointer;
+}
+.form--button:hover{
+  color:gray ;
+}
+.form--button:active{
+  border-color: gray;
+}
+@media screen and (max-width:600px) {
+  .subject--grid{
+    width: 260px;
+    margin-left:10px;
+    height: 400px;
+  }
+   
+  .subject--container{
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 100px;
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+
+  .subject--title{
+    margin-bottom: 40px;
+    font-size: 30px;
+  }
+  
+}
