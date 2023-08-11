@@ -3,6 +3,7 @@ const app = express()
 const cors= require('cors')
 const PizZip = require("pizzip");
 const Docxtemplater = require("docxtemplater");
+const PORT = "https://practical-backend-h29g.onrender.com"
 
 const fs = require("fs");
 const path = require("path");
@@ -79,6 +80,6 @@ function deleteFile(){
 }
 
 
-app.listen(9000,()=>{
-    console.log('Server started at Port 9000')
+app.listen(PORT,()=>{
+    console.log(`Server started at Port ${PORT}`)
 })
