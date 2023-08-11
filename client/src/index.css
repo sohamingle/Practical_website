@@ -147,5 +147,11 @@ body{
     margin-bottom: 40px;
     font-size: 30px;
   }
-  
+  .experiment--holder{
+    grid-template-columns: 100px 100px;
+    font-size: 12px;
+  }
+  .experiments{
+    padding: 5px 10px;
+  }
 }
