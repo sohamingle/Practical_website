@@ -27,6 +27,14 @@ export default function Form(props) {
         console.log(formData)
        
         axios.post('https://practical-backend-h29g.onrender.com/api',formData).then(res => console.log(res))
+
+        setTimeout(()=>{
+            downloadFile()
+        },1000)
+        
+    }
+    
+    function downloadFile(){
         
             axios({
                 url:'https://practical-backend-h29g.onrender.com/download',
@@ -35,9 +43,8 @@ export default function Form(props) {
             }).then((res)=>{
                 fileDownload(res.data,`${formData.name}_${formData.experiment}.docx`)
             })
-        
+
     }
-    
 
 
 
