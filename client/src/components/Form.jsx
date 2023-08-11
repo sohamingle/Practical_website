@@ -26,10 +26,10 @@ export default function Form(props) {
         e.preventDefault()
         console.log(formData)
        
-        axios.post('http://localhost:9000/api',formData).then(res => console.log(res))
+        axios.post('https://practical-backend-h29g.onrender.com/api',formData).then(res => console.log(res))
         
             axios({
-                url:'http://localhost:9000/download',
+                url:'https://practical-backend-h29g.onrender.com/download',
                 method:'GET',
                 responseType:'blob'
             }).then((res)=>{
