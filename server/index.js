@@ -33,10 +33,9 @@ app.post("/api",(req,res)=>{
 
 app.get("/download",(req,res)=>{
     createDoc()
-    if(token == true){
+    setTimeout(()=>{
         res.download("output.docx")
-        token = false
-    }
+    },5000)
     
 })
 
@@ -75,10 +74,6 @@ function createDoc() {
     // buf is a nodejs Buffer, you can either write it to a
     // file or res.send it with express for example.
     fs.writeFileSync(path.resolve(__dirname, "output.docx"), buf);
-
-    setTimeout(()=>{
-        token=true
-    },5000)
 }
 
 

@@ -131,7 +131,7 @@ export default function Form(props) {
                 />
                 <label>S23</label>
                 <br />
-                <button className='form--button' onClick={handleSubmit}>Submit</button>
+                {!timerMessage && <button className='form--button' onClick={handleSubmit}>Submit</button>}
                 {timerMessage && <p>Download will start in 5 seconds</p>}
                 </form>
         </>
