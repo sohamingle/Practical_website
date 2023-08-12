@@ -33,7 +33,7 @@ app.post("/api",(req,res)=>{
 
 app.get("/download",(req,res)=>{
     
-    fs.unlinkSync("output.docx")
+
     const filePath = path.join(__dirname,'/data')
     
     
@@ -76,6 +76,10 @@ app.get("/download",(req,res)=>{
     setTimeout(()=>{
         res.download("output.docx")
     },10000)
+
+    setTimeout(()=>{
+        fs.unlinkSync("output.docx")
+    },12000)
     
 })
 
