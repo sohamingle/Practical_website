@@ -28,10 +28,7 @@ export default function Form(props) {
        
         axios.post('https://practical-backend-h29g.onrender.com/api',formData).then(res => console.log(res))
 
-        setTimeout(()=>{
-            downloadFile()
-        },1000)
-        
+        downloadFile()
     }
     
     function downloadFile(){
