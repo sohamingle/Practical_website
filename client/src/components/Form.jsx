@@ -1,9 +1,11 @@
 import React ,{useState}from 'react'
 import axios from 'axios'
 import fileDownload from 'js-file-download'
+import useCountdown from './useCountdown'
 
 export default function Form(props) {
 
+    const {secondsLeft,start} = useCountdown()
     const [timerMessage,setTimerMessage] = useState(false)
     const [formData,setFormData] = useState({
         name:'',
@@ -30,6 +32,7 @@ export default function Form(props) {
 
         downloadFile()
         setTimerMessage(prev => !prev)
+        start(5)
     }
     
     function downloadFile(){
@@ -132,7 +135,7 @@ export default function Form(props) {
                 <label>S23</label>
                 <br />
                 {!timerMessage && <button className='form--button' onClick={handleSubmit}>Submit</button>}
-                {timerMessage && <p>Download will start in 5 seconds</p>}
+                {timerMessage && <p>Download will start in {secondsLeft} seconds</p>}
                 </form>
         </>
   )
