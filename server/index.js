@@ -74,11 +74,11 @@ app.get("/download",(req,res)=>{
 
     setTimeout(()=>{
         res.download("output.docx")
-    },5000)
+    },10000)
     setTimeout(()=>{
         fs.unlinkSync("output.docx")
 
-    },6900)
+    },15000)
     
 })
 
