@@ -11,7 +11,7 @@ const path = require("path");
 
 app.use(cors())
 app.use(express.json());
-let classNo,name,roll_no,batch,experiment
+let classNo,name,roll_no,batch,experiment,token
 
 app.get('/api',(req,res)=>{
     res.send(`
@@ -33,9 +33,10 @@ app.post("/api",(req,res)=>{
 
 app.get("/download",(req,res)=>{
     createDoc()
-    setTimeout(()=>{
+    if(token == true){
         res.download("output.docx")
-    },2500)
+        token = false
+    }
     
 })
 
@@ -74,6 +75,7 @@ function createDoc() {
     // buf is a nodejs Buffer, you can either write it to a
     // file or res.send it with express for example.
     fs.writeFileSync(path.resolve(__dirname, "output.docx"), buf);
+    token=true
 }
 
 
