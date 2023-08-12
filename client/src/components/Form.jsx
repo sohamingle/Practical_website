@@ -32,7 +32,7 @@ export default function Form(props) {
 
         downloadFile()
         setTimerMessage(prev => !prev)
-        start(5)
+        start(10)
     }
     
     function downloadFile(){
