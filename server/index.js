@@ -35,6 +35,7 @@ app.get("/download",(req,res)=>{
     createDoc()
     setTimeout(()=>{
         res.download("output.docx")
+        fs.unlinkSync("output.docx")
     },5000)
     
 })
