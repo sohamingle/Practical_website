@@ -75,7 +75,10 @@ function createDoc() {
     // buf is a nodejs Buffer, you can either write it to a
     // file or res.send it with express for example.
     fs.writeFileSync(path.resolve(__dirname, "output.docx"), buf);
-    token=true
+
+    setTimeout(()=>{
+        token=true
+    },3000)
 }
 
 
