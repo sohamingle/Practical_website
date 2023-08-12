@@ -35,7 +35,7 @@ app.get("/download",(req,res)=>{
     createDoc()
     setTimeout(()=>{
         res.download("output.docx")
-    },1500)
+    },2000)
     
 })
 
