@@ -33,7 +33,9 @@ app.post("/api",(req,res)=>{
 
 app.get("/download",(req,res)=>{
     createDoc()
-    res.download("output.docx")
+    setTimeout(()=>{
+        res.download("output.docx")
+    },500)
     
 })
 
