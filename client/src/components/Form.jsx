@@ -28,17 +28,17 @@ export default function Form(props) {
     const handleSubmit=  (e)=>{
         e.preventDefault()
        
-        axios.post('https://practical-backend-h29g.onrender.com/api',formData).then(res => console.log(res))
+        axios.post('http://localhost:9000/api',formData).then(res => console.log(res))
 
         downloadFile()
         setTimerMessage(prev => !prev)
-        start(10)
+        start(5)
     }
     
     function downloadFile(){
         
             axios({
-                url:'https://practical-backend-h29g.onrender.com/download',
+                url:'http://localhost:9000/download',
                 method:'GET',
                 responseType:'blob'
             }).then((res)=>{
@@ -46,6 +46,8 @@ export default function Form(props) {
             })
 
     }
+
+    const message = secondsLeft ===0 ? <p className='message'>Check your downloads</p> : <p className='message'>Download will start in {secondsLeft} seconds</p>
 
 
 
@@ -135,7 +137,7 @@ export default function Form(props) {
                 <label>S23</label>
                 <br />
                 {!timerMessage && <button className='form--button' onClick={handleSubmit}>Submit</button>}
-                {timerMessage && <p>Download will start in {secondsLeft} seconds</p>}
+                {timerMessage && message}
                 </form>
         </>
   )

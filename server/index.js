@@ -21,66 +21,60 @@ app.get('/api',(req,res)=>{
     <p>batch: ${batch}  </p>
     <p>experiment: ${experiment}</p>
      `)
-})
-
-app.post("/api",(req,res)=>{
-    name = req.body.name
-    roll_no = req.body.roll_no
-    batch = req.body.batch
-    experiment = req.body.experiment
-    classNo = req.body.class
-})
+    })
+    
+    app.post("/api",(req,res)=>{
+        name = req.body.name
+        roll_no = req.body.roll_no
+        batch = req.body.batch
+        experiment = req.body.experiment
+        classNo = req.body.class
+        const filePath = path.join(__dirname,'/data')
+        
+        
+                const content = fs.readFileSync(
+                path.resolve(filePath, `${experiment}.docx`),
+                "binary"
+            );
+        
+            const zip = new PizZip(content);
+        
+            const doc = new Docxtemplater(zip, {
+                paragraphLoop: true,
+                linebreaks: true,
+            });
+        
+            // Render the document (Replace {first_name} by John, {last_name} by Doe, ...)
+            doc.render({
+                name: name,
+                roll_no: roll_no,
+                experiment:experiment,
+                classNo:classNo,
+                batch:batch
+            });
+        
+            const buf = doc.getZip().generate({
+                type: "nodebuffer",
+                // compression: DEFLATE adds a compression step.
+                // For a 50MB output document, expect 500ms additional CPU time
+                compression: "DEFLATE",
+            });
+        
+            // buf is a nodejs Buffer, you can either write it to a
+            // file or res.send it with express for example.
+            fs.writeFileSync(path.resolve(__dirname, "output.docx"), buf);
+    })
+    
 
 app.get("/download",(req,res)=>{
-    
-
-    const filePath = path.join(__dirname,'/data')
-    
-    
-            const content = fs.readFileSync(
-            path.resolve(filePath, `${experiment}.docx`),
-            "binary"
-        );
-    
-        const zip = new PizZip(content);
-    
-        const doc = new Docxtemplater(zip, {
-            paragraphLoop: true,
-            linebreaks: true,
-        });
-    
-        // Render the document (Replace {first_name} by John, {last_name} by Doe, ...)
-        doc.render({
-            name: name,
-            roll_no: roll_no,
-            experiment:experiment,
-            classNo:classNo,
-            batch:batch
-        });
-    
-        const buf = doc.getZip().generate({
-            type: "nodebuffer",
-            // compression: DEFLATE adds a compression step.
-            // For a 50MB output document, expect 500ms additional CPU time
-            compression: "DEFLATE",
-        });
-    
-        // buf is a nodejs Buffer, you can either write it to a
-        // file or res.send it with express for example.
-        fs.writeFileSync(path.resolve(__dirname, "output.docx"), buf);
-    
-
-
-
 
     setTimeout(()=>{
-        res.download("output.docx")
-    },10000)
+        res.download("output.docx",()=>{
+            fs.unlinkSync("output.docx")
+        })
+    },5000)
 
-    setTimeout(()=>{
-        fs.unlinkSync("output.docx")
-    },12000)
-    
+
 })
 
 

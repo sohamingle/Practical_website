@@ -143,6 +143,10 @@ body{
 .form--button:active{
   border-color: gray;
 }
+.message{
+  display: flex;
+  justify-content: center;
+}
 @media screen and (max-width:600px) {
   .subject--grid{
     width: 260px;
