@@ -4,6 +4,7 @@ import fileDownload from 'js-file-download'
 
 export default function Form(props) {
 
+    const [timerMessage,setTimerMessage] = useState(false)
     const [formData,setFormData] = useState({
         name:'',
         roll_no:'',
@@ -28,6 +29,7 @@ export default function Form(props) {
         axios.post('https://practical-backend-h29g.onrender.com/api',formData).then(res => console.log(res))
 
         downloadFile()
+        setTimerMessage(prev => !prev)
     }
     
     function downloadFile(){
@@ -45,6 +47,7 @@ export default function Form(props) {
 
 
   return (
+    <>
     <form>
                 <label>Name: </label>
                 <input 
@@ -130,5 +133,7 @@ export default function Form(props) {
                 <br />
                 <button className='form--button' onClick={handleSubmit}>Submit</button>
                 </form>
+                {timerMessage && <p>Download will start in 5 seconds</p>}
+        </>
   )
 }
