@@ -78,7 +78,7 @@ function createDoc() {
 
     setTimeout(()=>{
         token=true
-    },3000)
+    },5000)
 }
 
 
