@@ -4,6 +4,7 @@ const cors= require('cors')
 const PizZip = require("pizzip");
 const Docxtemplater = require("docxtemplater");
 const PORT = "https://practical-backend-h29g.onrender.com"
+// const PORT = 9000
 
 const fs = require("fs");
 const path = require("path");
@@ -28,14 +29,12 @@ app.post("/api",(req,res)=>{
     batch = req.body.batch
     experiment = req.body.experiment
     classNo = req.body.class
-    createDoc()
-    setTimeout(()=>{
-        deleteFile()
-    },5000)
 })
 
 app.get("/download",(req,res)=>{
+    createDoc()
     res.download("output.docx")
+    
 })
 
 
@@ -75,9 +74,6 @@ function createDoc() {
     fs.writeFileSync(path.resolve(__dirname, "output.docx"), buf);
 }
 
-function deleteFile(){
-    fs.unlinkSync("output.docx")
-}
 
 
 app.listen(PORT,()=>{
