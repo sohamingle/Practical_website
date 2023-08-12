@@ -24,7 +24,6 @@ export default function Form(props) {
 
     const handleSubmit=  (e)=>{
         e.preventDefault()
-        console.log(formData)
        
         axios.post('https://practical-backend-h29g.onrender.com/api',formData).then(res => console.log(res))
 
