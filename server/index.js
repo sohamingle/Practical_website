@@ -62,15 +62,15 @@ app.get('/api',(req,res)=>{
         
             // buf is a nodejs Buffer, you can either write it to a
             // file or res.send it with express for example.
-            fs.writeFileSync(path.resolve(__dirname, "output.docx"), buf);
+            fs.writeFileSync(path.resolve(__dirname, `${name}_${experiment}.docx`), buf);
     })
     
 
 app.get("/download",(req,res)=>{
 
     setTimeout(()=>{
-        res.download("output.docx",()=>{
-            fs.unlinkSync("output.docx")
+        res.download(`${name}_${experiment}.docx`,()=>{
+            fs.unlinkSync(`${name}_${experiment}.docx`)
         })
     },5000)
 

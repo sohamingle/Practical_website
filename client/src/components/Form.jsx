@@ -36,9 +36,9 @@ export default function Form(props) {
     }
     
     function downloadFile(){
-            const uniqueQueryParam = `?timestamp=${Date.now()}`;
+            
             axios({
-                url:`https://practical-backend-h29g.onrender.com/download${uniqueQueryParam}`,
+                url:`https://practical-backend-h29g.onrender.com/download`,
                 method:'GET',
                 responseType:'blob'
             }).then((res)=>{
