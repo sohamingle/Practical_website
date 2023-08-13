@@ -9,7 +9,7 @@ const PORT = 9000
 const fs = require("fs");
 const path = require("path");
 
-// app.use(cors())
+app.use(cors())
 app.use(express.json());
 let classNo,name,roll_no,batch,experiment,token
 
