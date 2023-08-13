@@ -68,9 +68,6 @@ app.get('/api',(req,res)=>{
 
 app.get("/download",(req,res)=>{
 
-    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-    res.setHeader('Pragma', 'no-cache');
-    res.setHeader('Expires', '0');
     setTimeout(()=>{
         res.download("output.docx",()=>{
             fs.unlinkSync("output.docx")
