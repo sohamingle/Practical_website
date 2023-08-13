@@ -27,20 +27,24 @@ function Subject() {
     setSelectedSubject(e)
   }
 
+  const handleRefreshClick = () => {
+    window.location.reload();
+  };
+
   let htmlSelectedSubject
   if(selectedSubject == 'DTSP'){
     htmlSelectedSubject = <>
-                        <div className="back" onClick={handleClick}>Back</div>
+                        <div className="back" onClick={handleRefreshClick}>Back</div>
                         <DTSP/>
                         </>
   }else if(selectedSubject == 'DCOM'){
     htmlSelectedSubject = <>
-                        <div className="back" onClick={handleClick}>Back</div>
+                        <div className="back" onClick={handleRefreshClick}>Back</div>
                         <DCOM/>
                         </>
   }else if(selectedSubject == 'DVLSI'){
     htmlSelectedSubject = <>
-                        <div className="back" onClick={handleClick}>Back</div>
+                        <div className="back" onClick={handleRefreshClick}>Back</div>
                         <DVLSI/>
                         </>
   }
