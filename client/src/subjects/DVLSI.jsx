@@ -14,15 +14,14 @@ function DVLSI() {
 
     const experiments =<>
     <div className="experiment--holder">
-    <div onClick={()=>handleClick('dvlsi_exp1')} className='experiments'>experiment 1</div>
     <div onClick={()=>handleClick('dvlsi_exp2')} className='experiments'>experiment 2</div>
+    <div onClick={()=>handleClick('dvlsi_exp3')} className='experiments'>experiment 3</div>
     </div>
     </>
 
 
   return (
-  //  formToken ?  <Form experimentNo={experimentNo}/> : experiments
-  <div>Not Available</div>
+   formToken ?  <Form experimentNo={experimentNo}/> : experiments
    
   )
 }
