@@ -13,15 +13,6 @@ app.use(cors())
 app.use(express.json());
 let classNo,name,roll_no,batch,experiment,token
 
-app.get('/api',(req,res)=>{
-    res.send(`
-    <p>name: ${name}  </p>
-    <p>roll_no: ${roll_no}  </p>
-    <p>class: ${classNo} </p>
-    <p>batch: ${batch}  </p>
-    <p>experiment: ${experiment}</p>
-     `)
-    })
     
     app.post("/api",(req,res)=>{
         name = req.body.name
