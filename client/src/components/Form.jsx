@@ -47,7 +47,7 @@ export default function Form(props) {
 
     }
 
-    const message = secondsLeft ===0 ? <p className='message'>Check your downloads</p> : <p className='message'>Download will start in {secondsLeft} seconds</p>
+    const message = secondsLeft ===0 ? <><p className='message'>Check your downloads</p><p className="message">***Refresh if not working***</p></> : <p className='message'>Download will start in {secondsLeft} seconds</p>
 
 
 
