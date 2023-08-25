@@ -29,24 +29,19 @@ export default function Form(props) {
         e.preventDefault()
        
         axios.post('https://practical-backend-h29g.onrender.com/api',formData).then(res => console.log(res))
-
-        downloadFile()
+        
+        axios({
+            url:`https://practical-backend-h29g.onrender.com/download`,
+            method:'GET',
+            responseType:'blob',
+            cache:'no-store'
+        }).then((res)=>{
+            fileDownload(res.data,`${formData.name}_${formData.experiment}.docx`)
+        })
         setTimerMessage(prev => !prev)
         start(5)
     }
     
-    function downloadFile(){
-            
-            axios({
-                url:`https://practical-backend-h29g.onrender.com/download`,
-                method:'GET',
-                responseType:'blob',
-                cache:'no-store'
-            }).then((res)=>{
-                fileDownload(res.data,`${formData.name}_${formData.experiment}.docx`)
-            })
-
-    }
 
     const message = secondsLeft ===0 ? <><p className='message'>Check your downloads</p><p className="message">***Refresh if not working***</p></> : <p className='message'>Download will start in {secondsLeft} seconds</p>
 
