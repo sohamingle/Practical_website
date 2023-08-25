@@ -40,7 +40,8 @@ export default function Form(props) {
             axios({
                 url:`https://practical-backend-h29g.onrender.com/download`,
                 method:'GET',
-                responseType:'blob'
+                responseType:'blob',
+                cache:'no-store'
             }).then((res)=>{
                 fileDownload(res.data,`${formData.name}_${formData.experiment}.docx`)
             })
