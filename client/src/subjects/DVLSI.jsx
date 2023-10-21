@@ -17,6 +17,10 @@ function DVLSI() {
     <div onClick={()=>handleClick('dvlsi_exp2')} className='experiments'>experiment 2</div>
     <div onClick={()=>handleClick('dvlsi_exp3')} className='experiments'>experiment 3</div>
     <div onClick={()=>handleClick('dvlsi_exp4')} className='experiments'>experiment 4</div>
+    <div onClick={()=>handleClick('dvlsi_exp5')} className='experiments'>experiment 5</div>
+    <div onClick={()=>handleClick('dvlsi_exp6')} className='experiments'>experiment 6</div>
+    <div onClick={()=>handleClick('dvlsi_exp7')} className='experiments'>experiment 7</div>
+    <div onClick={()=>handleClick('dvlsi_exp8')} className='experiments'>experiment 8</div>
     </div>
     </>
 
