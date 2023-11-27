@@ -8,6 +8,10 @@ export async function POST(req: Request) {
     try {
         const { name, roll_no, batch, experiment, classNo } = await req.json();
 
+        if(!name || !roll_no || !batch || !experiment || !classNo){
+            return NextResponse.json({ message: 'Missing Details' }, { status: 400 });
+        }
+
         const content = fs.readFileSync(
             path.resolve('data', `${experiment}.docx`),
             'binary'
