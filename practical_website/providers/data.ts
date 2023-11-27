@@ -45,31 +45,31 @@ export const data:ExperimentData = {
     dvlsi:[
         {
             name:"Experiment 2",
-            value:"dtsp_exp2",
+            value:"dvlsi_exp2",
         },
         {
             name:"Experiment 3",
-            value:"dtsp_exp3",
+            value:"dvlsi_exp3",
         },
         {
             name:"Experiment 4",
-            value:"dtsp_exp4",
+            value:"dvlsi_exp4",
         },
         {
             name:"Experiment 5",
-            value:"dtsp_exp5",
+            value:"dvlsi_exp5",
         },
         {
             name:"Experiment 6",
-            value:"dtsp_exp6",
+            value:"dvlsi_exp6",
         },
         {
             name:"Experiment 7",
-            value:"dtsp_exp7",
+            value:"dvlsi_exp7",
         },
         {
             name:"Experiment 8",
-            value:"dtsp_exp8",
+            value:"dvlsi_exp8",
         },
     ]
 }
