@@ -29,13 +29,12 @@ const ExperimentForm = ({ experiment }: { experiment: string }) => {
                 classNo: formData.get("class"),
                 batch: formData.get("batch"),
                 experiment
-            },{responseType:'blob'})
-            fileDownload(data, `${formData.get("name")}_${experiment}.docx`)
+            })
+            console.log(data, `${formData.get("name")}_${experiment}.docx`)
             await axios.delete('/api/download', { data: { doc: `${formData.get("name")}_${experiment}.docx` } })
-            router.push('/')
+            // router.push('/')
         } catch (error: any) {
-            toast.error(error.response.data.message)
-            console.log(error)
+            toast.error(error.response.data.message || "Something went wrong")
         }finally{
             setLoading(false)
         }
