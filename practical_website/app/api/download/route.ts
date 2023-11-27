@@ -42,7 +42,7 @@ export async function POST(req: Request) {
 
         return new Response(file,{headers:{'Content-Disposition': `attachment; filename=${fileName}`,'Content-Type': 'application/docx'}})
     } catch (error) {
-        NextResponse.json({ message: 'Error generating document' }, { status: 500 });
+        return NextResponse.json({ message: 'Error generating document' }, { status: 500 });
     }
 }
 
