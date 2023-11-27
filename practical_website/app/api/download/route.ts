@@ -40,7 +40,7 @@ export async function POST(req: Request) {
         fs.writeFileSync(filePathWithName, buf);
         const file = await fs.openAsBlob(filePathWithName);
 
-        return new Response(file,{headers:{'Content-Disposition': `attachment; filename=${fileName}`,'Content-Type': 'application/docx'}})
+        return Response.json(file,{headers:{'Content-Disposition': `attachment; filename=${fileName}`,'Content-Type': 'application/docx'}})
     } catch (error) {
         return NextResponse.json({ message: 'Error generating document' }, { status: 500 });
     }
