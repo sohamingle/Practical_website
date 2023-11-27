@@ -29,7 +29,7 @@ const ExperimentForm = ({ experiment }: { experiment: string }) => {
                 classNo: formData.get("class"),
                 batch: formData.get("batch"),
                 experiment
-            }, { responseType: 'blob' })
+            },{responseType:'blob'})
             fileDownload(data, `${formData.get("name")}_${experiment}.docx`)
             await axios.delete('/api/download', { data: { doc: `${formData.get("name")}_${experiment}.docx` } })
             router.push('/')
