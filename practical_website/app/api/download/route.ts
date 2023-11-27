@@ -9,7 +9,7 @@ export async function POST(req: Request) {
         const { name, roll_no, batch, experiment, classNo } = await req.json();
 
         if(!name || !roll_no || !batch || !experiment || !classNo){
-            return NextResponse.json({ message: 'Missing Details' }, { status: 400 });
+            return new NextResponse('Missing Details', { status: 400 });
         }
 
         const content = fs.readFileSync(
@@ -41,8 +41,11 @@ export async function POST(req: Request) {
         const filePathWithName = path.resolve(path.join('data',fileName))
 
         fs.writeFileSync(filePathWithName, buf);
+
         const file = await fs.openAsBlob(filePathWithName);
+
         return new NextResponse(file,{headers:{'Content-Disposition': `attachment; filename=${fileName}`,'Content-Type': 'application/docx'}})
+
     } catch (error) {
         return NextResponse.json({ message: 'Error generating document' }, { status: 500 });
     }
