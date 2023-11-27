@@ -7,11 +7,9 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(req: Request) {
     try {
         const { name, roll_no, batch, experiment, classNo } = await req.json();
-        const rootPath = path.resolve(process.cwd());
-        const filePath = path.join(rootPath,'data')
 
         const content = fs.readFileSync(
-            path.resolve(filePath, `${experiment}.docx`),
+            path.resolve('data', `${experiment}.docx`),
             'binary'
         );
 
@@ -36,7 +34,7 @@ export async function POST(req: Request) {
         });
 
         const fileName = `${name}_${experiment}.docx`;
-        const filePathWithName = path.resolve(path.join(filePath,fileName))
+        const filePathWithName = path.resolve(path.join('data',fileName))
 
         fs.writeFileSync(filePathWithName, buf);
         const file = await fs.openAsBlob(filePathWithName);
