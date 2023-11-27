@@ -35,6 +35,7 @@ const ExperimentForm = ({ experiment }: { experiment: string }) => {
             router.push('/')
         } catch (error: any) {
             toast.error(error.response.data.message)
+            console.log(error)
         }finally{
             setLoading(false)
         }
