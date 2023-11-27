@@ -11,7 +11,7 @@ function Home() {
       <div className='grid gap-3 md:grid-cols-2'>
         <SubjectCard subjectName={"Digital Very Large Scale Integration"} subjectLogo={DVLSI} link={"dvlsi"} subjectClass={"T.E. EXTC SEM V"}/>
         <SubjectCard subjectName={"Digital Communication"} subjectLogo={DCOM} link={"dcom"} subjectClass={"T.E. EXTC SEM V"}/>
-        <SubjectCard subjectName={"Discrete Time Signal Processing"} subjectLogo={DTSP} link={"dvlsi"} subjectClass={"T.E. EXTC SEM V"}/>
+        <SubjectCard subjectName={"Discrete Time Signal Processing"} subjectLogo={DTSP} link={"dtsp"} subjectClass={"T.E. EXTC SEM V"}/>
       </div>
     </div>
   )
