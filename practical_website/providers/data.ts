@@ -1,3 +1,6 @@
+import DVLSI from "@/public/logo/dvlsi.png"
+import DCOM from "@/public/logo/dcom.png"
+import DTSP from "@/public/logo/dtsp.png"
 interface Experiment {
     name: string;
     value: string;
@@ -10,66 +13,92 @@ interface ExperimentData {
     dvlsi: Experiment[];
 }
 
-export const data:ExperimentData = {
-    dcom:[{name:"Experiment 1",value:"dcom_exp1"}],
-    dtsp:[
+export const subjects_data = [
+    {
+        subjectName: "Digital Very Large Scale Integration",
+        subjectLogo: DVLSI,
+        link: "dvlsi",
+        subjectClass: "T.E. EXTC SEM V"
+    },
+    {
+        subjectName: "Digital Communication",
+        subjectLogo: DCOM,
+        link: "dcom",
+        subjectClass: "T.E. EXTC SEM V"
+    },
+    {
+        subjectName: "Discrete Time Signal Processing",
+        subjectLogo: DTSP,
+        link: "dtsp",
+        subjectClass: "T.E. EXTC SEM V"
+    }
+]
+
+export const data: ExperimentData = {
+    dcom: [
         {
-            name:"Experiment 1",
-            value:"dtsp_exp1",
+            name: "Experiment 1",
+            value: "dcom_exp1"
+        }
+    ],
+    dtsp: [
+        {
+            name: "Experiment 1",
+            value: "dtsp_exp1",
         },
         {
-            name:"Experiment 2",
-            value:"dtsp_exp2",
+            name: "Experiment 2",
+            value: "dtsp_exp2",
         },
         {
-            name:"Experiment 3",
-            value:"dtsp_exp3",
+            name: "Experiment 3",
+            value: "dtsp_exp3",
         },
         {
-            name:"Experiment 4",
-            value:"dtsp_exp4",
+            name: "Experiment 4",
+            value: "dtsp_exp4",
         },
         {
-            name:"Experiment 5",
-            value:"dtsp_exp5",
+            name: "Experiment 5",
+            value: "dtsp_exp5",
         },
         {
-            name:"Experiment 7",
-            value:"dtsp_exp7",
+            name: "Experiment 7",
+            value: "dtsp_exp7",
         },
         {
-            name:"Experiment 8",
-            value:"dtsp_exp8",
+            name: "Experiment 8",
+            value: "dtsp_exp8",
         },
     ],
-    dvlsi:[
+    dvlsi: [
         {
-            name:"Experiment 2",
-            value:"dvlsi_exp2",
+            name: "Experiment 2",
+            value: "dvlsi_exp2",
         },
         {
-            name:"Experiment 3",
-            value:"dvlsi_exp3",
+            name: "Experiment 3",
+            value: "dvlsi_exp3",
         },
         {
-            name:"Experiment 4",
-            value:"dvlsi_exp4",
+            name: "Experiment 4",
+            value: "dvlsi_exp4",
         },
         {
-            name:"Experiment 5",
-            value:"dvlsi_exp5",
+            name: "Experiment 5",
+            value: "dvlsi_exp5",
         },
         {
-            name:"Experiment 6",
-            value:"dvlsi_exp6",
+            name: "Experiment 6",
+            value: "dvlsi_exp6",
         },
         {
-            name:"Experiment 7",
-            value:"dvlsi_exp7",
+            name: "Experiment 7",
+            value: "dvlsi_exp7",
         },
         {
-            name:"Experiment 8",
-            value:"dvlsi_exp8",
+            name: "Experiment 8",
+            value: "dvlsi_exp8",
         },
     ]
 }

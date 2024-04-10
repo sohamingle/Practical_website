@@ -5,7 +5,7 @@ import { Button, Input, RadioGroup } from "@nextui-org/react";
 import axios from "axios";
 import fileDownload from "js-file-download";
 import { FileDownIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -14,6 +14,7 @@ const ExperimentForm = ({ experiment }: { experiment: string }) => {
     const [loading,setLoading] = useState(false)
 
     const router = useRouter()
+    const params = useParams()
 
     const handleSubmit = async (e: any) => {
         e.preventDefault()
@@ -28,11 +29,11 @@ const ExperimentForm = ({ experiment }: { experiment: string }) => {
                 roll_no: formData.get("rollNo"),
                 classNo: formData.get("class"),
                 batch: formData.get("batch"),
+                file: formData.get("file"),
                 experiment
             },{responseType:"blob"})
             fileDownload(data, `${formData.get("name")}_${experiment}.docx`)
-            await axios.delete('/api/download', { data: { doc: `${formData.get("name")}_${experiment}.docx` } })
-            router.push('/')
+            router.push(`/subject/${params.subject}`)
         } catch (error: any) {
             toast.error(error.response.data.message || "Something went wrong")
         }finally{
