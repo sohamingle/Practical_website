@@ -8,7 +8,7 @@ function Home() {
       <div className="text-xl font-bold mb-5">Select Practical</div>
       <div className='grid gap-3 md:grid-cols-2'>
         {subjects_data.map(subject => (
-          <SubjectCard subjectName={subject.subjectName} subjectLogo={subject.subjectLogo} link={subject.link} subjectClass={subject.subjectClass}/>
+          <SubjectCard key={subject.subjectName} subjectName={subject.subjectName} subjectLogo={subject.subjectLogo} link={subject.link} subjectClass={subject.subjectClass}/>
         ))}
       </div>
     </div>
