@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import UIProvider from '@/providers/nextui-provider'
 import { Toaster } from 'react-hot-toast'
-import GoogleAnalyticsProvider from '@/providers/GoogleAnalyticsProvider'
 import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
