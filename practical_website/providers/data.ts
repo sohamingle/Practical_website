@@ -1,6 +1,7 @@
 import DVLSI from "@/public/logo/dvlsi.png"
 import DCOM from "@/public/logo/dcom.png"
 import DTSP from "@/public/logo/dtsp.png"
+import LINUX from "@/public/logo/linux.webp"
 interface Experiment {
     name: string;
     value: string;
@@ -11,6 +12,7 @@ interface ExperimentData {
     dcom: Experiment[];
     dtsp: Experiment[];
     dvlsi: Experiment[];
+    linux: Experiment[];
 }
 
 export const subjects_data = [
@@ -31,7 +33,13 @@ export const subjects_data = [
         subjectLogo: DTSP,
         link: "dtsp",
         subjectClass: "T.E. EXTC SEM V"
-    }
+    },
+    {
+        subjectName: "Skill Lab - Linux",
+        subjectLogo: LINUX,
+        link: "linux",
+        subjectClass: "T.E. EXTC SEM VI"
+    },
 ]
 
 export const data: ExperimentData = {
@@ -99,6 +107,52 @@ export const data: ExperimentData = {
         {
             name: "Experiment 8",
             value: "dvlsi_exp8",
+        },
+    ],
+    linux:[
+        {
+            name: "Experiment 1",
+            value: "linux_exp1",
+        },
+        {
+            name: "Experiment 2",
+            value: "linux_exp2",
+        },
+        {
+            name: "Experiment 3",
+            value: "linux_exp3",
+        },
+        {
+            name: "Experiment 4",
+            value: "linux_exp4",
+        },
+        {
+            name: "Experiment 5",
+            value: "linux_exp5",
+        },
+        {
+            name: "Experiment 6",
+            value: "linux_exp6",
+        },
+        {
+            name: "Experiment 7",
+            value: "linux_exp7",
+        },
+        {
+            name: "Experiment 8",
+            value: "linux_exp8",
+        },
+        {
+            name: "Experiment 9",
+            value: "linux_exp9",
+        },
+        {
+            name: "Experiment 10",
+            value: "linux_exp10",
+        },
+        {
+            name: "Experiment 11",
+            value: "linux_exp11",
         },
     ]
 }
