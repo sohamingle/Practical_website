@@ -64,14 +64,14 @@ const ExperimentForm = ({ experiment }: { experiment: string }) => {
                     </CustomRadio>
                 </RadioGroup>
                 <RadioGroup name="batch" label="Batch" orientation="horizontal" size="sm" isRequired >
-                    <CustomRadio value="S21">
-                        S21
+                    <CustomRadio value="T21">
+                        T21
                     </CustomRadio>
-                    <CustomRadio value="S22">
-                        S22
+                    <CustomRadio value="T22">
+                        T22
                     </CustomRadio>
-                    <CustomRadio value="S23">
-                        S23
+                    <CustomRadio value="T23">
+                        T23
                     </CustomRadio>
                 </RadioGroup>
                 <Button className="w-full max-w-md flex justify-center items-center" type="submit" color="primary" isLoading={loading}><FileDownIcon />Download</Button>
