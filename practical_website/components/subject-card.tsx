@@ -13,7 +13,7 @@ interface SubjectCardProps{
 
 const SubjectCard:React.FC<SubjectCardProps> = ({subjectName,subjectClass,subjectLogo,link}) => {
     return (
-        <Link href={`subject/${link}`}>
+        <Link href={`/${link}`}>
             <Card className="p-3">
                 <div className="flex">
                     <Image src={subjectLogo} alt={link} width={65} className="w-auto"/>

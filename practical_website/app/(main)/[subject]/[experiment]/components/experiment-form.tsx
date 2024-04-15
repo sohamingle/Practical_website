@@ -33,7 +33,7 @@ const ExperimentForm = ({ experiment }: { experiment: string }) => {
                 experiment
             },{responseType:"blob"})
             fileDownload(data, `${formData.get("name")}_${experiment}.docx`)
-            router.push(`/subject/${params.subject}`)
+            router.push(`/${params.subject}`)
         } catch (error: any) {
             toast.error(error.response.data.message || "Something went wrong")
         }finally{
