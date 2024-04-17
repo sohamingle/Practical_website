@@ -25,7 +25,7 @@ export default function RootLayout({
           {children}
         </UIProvider>
       </body>
-      <GoogleAnalytics gaId={"G-MMVH87S55H"} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string} />
     </html>
   )
 }
